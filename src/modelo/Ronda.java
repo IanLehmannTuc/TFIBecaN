@@ -20,4 +20,8 @@ public class Ronda {
     }
 
     // Puedes agregar otros métodos para realizar operaciones relacionadas con la ronda, como calcular puntajes
+    
+    public int puntos() {
+    	return 0;
+    }
 }

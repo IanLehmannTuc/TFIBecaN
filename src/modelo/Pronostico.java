@@ -1,25 +1,34 @@
 package modelo;
 
 public class Pronostico {
-    private Equipo equipo1;
-    private Equipo equipo2;
-    private ResultadoEnum pronosticoResultado;
+    private Partido partido;
+    private Equipo equipo;
+    private ResultadoEnum resultadoEnum;
 
-    public Pronostico(Equipo equipo1, Equipo equipo2, ResultadoEnum pronosticoResultado) {
-        this.equipo1 = equipo1;
-        this.equipo2 = equipo2;
-        this.pronosticoResultado = pronosticoResultado;
+    public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultadoEnum) {
+        this.partido = partido;
+        this.equipo = equipo;
+        this.resultadoEnum = resultadoEnum;
     }
 
-    public Equipo getEquipo1() {
-        return equipo1;
+    public Partido getPartido() {
+        return partido;
     }
 
-    public Equipo getEquipo2() {
-        return equipo2;
+    public Equipo getEquipo() {
+        return equipo;
     }
-
-    public ResultadoEnum getPronosticoResultado() {
-        return pronosticoResultado;
+    
+    public ResultadoEnum getResultadoEnum() {
+    	return resultadoEnum;
+    }
+    
+    public int puntos(){
+    	if(partido.resultado(equipo)==resultadoEnum) {
+    		return 1;
+    	}
+    	else {
+    		return 0;
+    	}
     }
 }

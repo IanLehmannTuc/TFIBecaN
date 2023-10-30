@@ -32,12 +32,36 @@ public class Partido {
     public ResultadoEnum resultado(Equipo equipo) {
         // Implementa la lógica para determinar el resultado (ganador, perdedor, empate)
         // Puedes utilizar las puntuaciones de goles para calcularlo
-        if (golesEquipo1 > golesEquipo2) {
-            return ResultadoEnum.ganador;
-        } else if (golesEquipo2 > golesEquipo1) {
-            return ResultadoEnum.perdedor;
-        } else {
-            return ResultadoEnum.empate;
-        }
+//        if (golesEquipo1 > golesEquipo2) {
+//            return ResultadoEnum.ganador;
+//        } else if (golesEquipo2 > golesEquipo1) {
+//            return ResultadoEnum.perdedor;
+//        } else {
+//            return ResultadoEnum.empate;
+//        }
+    	
+    	if(this.equipo1.getNombre() == equipo.getNombre()) {
+    		if(golesEquipo1 > golesEquipo2) {
+    			return ResultadoEnum.ganador;
+    		}
+    		else if(golesEquipo2 > golesEquipo1) {
+    			return ResultadoEnum.perdedor;
+    		}
+    		else {
+    			return ResultadoEnum.empate;
+    		}
+    	}
+    	else {
+    		if(golesEquipo2 > golesEquipo1) {
+    			return ResultadoEnum.ganador;
+    		}
+    		else if(golesEquipo1 > golesEquipo2) {
+    			return ResultadoEnum.perdedor;
+    		}
+    		else {
+    			return ResultadoEnum.empate;
+    		}
+    	}
+    	
     }
 }
