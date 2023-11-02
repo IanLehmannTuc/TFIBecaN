@@ -5,14 +5,17 @@ public class Pronostico {
     private Equipo equipo;
     private ResultadoEnum resultadoEnum;
 
-    public Pronostico(Partido partido, Equipo equipo, ResultadoEnum resultadoEnum) {
-        this.partido = partido;
+    public Pronostico(Equipo equipo, ResultadoEnum resultadoEnum) {
         this.equipo = equipo;
         this.resultadoEnum = resultadoEnum;
     }
 
     public Partido getPartido() {
         return partido;
+    }
+    
+    public void setPartido(Partido partido) {
+    	this.partido = partido;
     }
 
     public Equipo getEquipo() {

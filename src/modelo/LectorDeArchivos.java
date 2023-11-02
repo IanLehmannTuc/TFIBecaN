@@ -1,4 +1,4 @@
-package modelo;
+	package modelo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,17 +10,11 @@ import java.util.List;
 
 
 public class LectorDeArchivos {
-	 public static class Resultados {
-	        public List<String[]> data1;
-	        public List<String[]> data2;
+	
+	   private List<String[]> ronda;
+	   private List<String[]> pronosticos;
 
-	        public Resultados(List<String[]> data1, List<String[]> data2) {
-	            this.data1 = data1;
-	            this.data2 = data2;
-	        }
-	    }
-
-	    public static Resultados leerArchivos(String rutaArchivo1, String rutaArchivo2) throws IOException {
+	   public LectorDeArchivos(String rutaArchivo1, String rutaArchivo2) throws IOException {
 	        Path pathArchivo1 = Paths.get(rutaArchivo1);
 	        Path pathArchivo2 = Paths.get(rutaArchivo2);
 
@@ -47,58 +41,61 @@ public class LectorDeArchivos {
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-
-	        return new Resultados(data1, data2);
+	        
 	    }
-
-	    
-	       
-	    
-
-	    public static void main(String[] args) {
-	    	LectorDeArchivos objeto = new LectorDeArchivos();
-
-	        String pathArchivo1 = "Resultados.csv";
-	        String pathArchivo2 = "Pronosticos.csv";
-
-	        Resultados resultado;
-	        try {
-	            resultado = objeto.leerArchivos(pathArchivo1, pathArchivo2);
-
-	            List<String[]> data1 = resultado.data1;
-	            List<String[]> data2 = resultado.data2;
-	            
-	            // Imprimir encabezado
-	          for (String dato : data1.get(0)) {
-	                System.out.print(dato + " |");
-	            }
-	            System.out.println();
-
-	            // Imprimir datos
-	            for (int i = 1; i < data1.size(); i++) {
-	                for (String dato : data1.get(i)) {
-	                    System.out.print(dato + "|");
-	                }
-	                System.out.println();
-	            }
-
-	            System.out.println();
-	            
-	            // Imprimir encabezado
-	            for (String dato : data2.get(0)) {
-	                System.out.print(dato + "| ");
-	            }
-	            System.out.println();
-
-	            // Imprimir datos
-	            for (int i = 1; i < data2.size(); i++) {
-	                for (String dato : data2.get(i)) {
-	                    System.out.print(dato + " |");
-	                }
-	                System.out.println();
-	            }
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    }
+	   
+	   public List<String[]> getRondas(){
+		   return null;
+	   }
+	   
+	   public List<String[]> getEquipos(){
+		   return null;
+	   }
 }
+//	    public static void main(String[] args) {
+//	    	LectorDeArchivos objeto = new LectorDeArchivos();
+//
+//	        String pathArchivo1 = "Resultados.csv";
+//	        String pathArchivo2 = "Pronosticos.csv";
+//
+//	        Resultados resultado;
+//	        try {
+//	            resultado = objeto.leerArchivos(pathArchivo1, pathArchivo2);
+//
+//	            List<String[]> data1 = resultado.data1;
+//	            List<String[]> data2 = resultado.data2;
+//	            
+//	            // Imprimir encabezado
+//	          for (String dato : data1.get(0)) {
+//	                System.out.print(dato + " |");
+//	            }
+//	            System.out.println();
+//
+//	            // Imprimir datos
+//	            for (int i = 1; i < data1.size(); i++) {
+//	                for (String dato : data1.get(i)) {
+//	                    System.out.print(dato + "|");
+//	                }
+//	                System.out.println();
+//	            }
+//
+//	            System.out.println();
+//	            
+//	            // Imprimir encabezado
+//	            for (String dato : data2.get(0)) {
+//	                System.out.print(dato + "| ");
+//	            }
+//	            System.out.println();
+//
+//	            // Imprimir datos
+//	            for (int i = 1; i < data2.size(); i++) {
+//	                for (String dato : data2.get(i)) {
+//	                    System.out.print(dato + " |");
+//	                }
+//	                System.out.println();
+//	            }
+//	        } catch (IOException e) {
+//	            e.printStackTrace();
+//	        }
+//	    }
+//}
