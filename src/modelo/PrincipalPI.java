@@ -7,29 +7,23 @@ import java.util.ArrayList;
 
 public class PrincipalPI {
 
-	public static void main(String[] args) {
-		    String archivo = "C:\\Users\\proca\\eclipse-workspace\\Apuestas\\src\\Metodos\\apuestas.csv";		    
-		    List<List<String>> lineas = leerArchivo(archivo);
-		    for (List<String> linea : lineas) {
-		        System.out.println(linea);
-		    }
-		}
-
-	public static List<List<String>> leerArchivo(String archivo) {
-		    List<List<String>> lineas = new ArrayList<>();
-		    try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
-		        String linea;
-		        while ((linea = br.readLine()) != null) {
-		            String[] valores = linea.split(",");
-		            List<String> valoresLista = new ArrayList<>();
-		            for (String valor : valores) {
-		                valoresLista.add(valor);
-		            }
-		            lineas.add(valoresLista);
-		        }
-		    } catch (IOException e) {
-		        e.printStackTrace();
-		    }
-		    return lineas;
-		}
+    public static List<String[]> leerArchivoCSV(String rutaArchivo) {
+        List<String[]> result = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] palabra = linea.split(";");
+                result.add(palabra);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+    public static List<String[]> conectar() {
+        String archivo = "Resultados.csv";
+        List<String[]> valores = PrincipalPI.leerArchivoCSV(archivo);
+        return valores;
+    }
+	
 }
