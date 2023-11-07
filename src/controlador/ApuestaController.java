@@ -11,20 +11,19 @@ public class ApuestaController {
 		
 		int puntajeTotal = 0;
 		
-		for(int i = 0; ronda.getPartidos().size()>=i; i++) {
+		for(int i = 0; ronda.getPartidos().size()>i; i++) {
 			
-				if(ronda.getPartidos().get(i).getEquipo1().getNombre() == listaPronosticos.get(i).getEquipo().getNombre()) {
+				if(ronda.getPartidos().get(i).getEquipo1().getNombre().equals(listaPronosticos.get(i).getEquipo().getNombre())){
 					listaPronosticos.get(i).setPartido(ronda.getPartidos().get(i));
 					puntajeTotal += listaPronosticos.get(i).puntos();
 				}
 				
-				else if(ronda.getPartidos().get(i).getEquipo2().getNombre() == listaPronosticos.get(i).getEquipo().getNombre()) {
+				else if(ronda.getPartidos().get(i).getEquipo2().getNombre().equals(listaPronosticos.get(i).getEquipo().getNombre())){
 					listaPronosticos.get(i).setPartido(ronda.getPartidos().get(i));
 					puntajeTotal += listaPronosticos.get(i).puntos();
 					
 				}
 				
-				i++;
 		}
 		
 		return puntajeTotal;

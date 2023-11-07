@@ -25,5 +25,11 @@ public class PrincipalPI {
         List<String[]> valores = PrincipalPI.leerArchivoCSV(archivo);
         return valores;
     }
+    public static List<String[]> conectarr() {
+        String archivo = "Pronosticos.csv";
+        List<String[]> valoresr = PrincipalPI.leerArchivoCSV(archivo);
+        return valoresr;
+    }
 	
 }
+
