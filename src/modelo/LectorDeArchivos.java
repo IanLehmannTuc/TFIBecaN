@@ -1,4 +1,4 @@
-	package modelo;
+package modelo;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,60 +42,38 @@ public class LectorDeArchivos {
 	            e.printStackTrace();
 	        }
 	        
+	        this.ronda = data1;
+	        this.pronosticos = data2;
 	    }
 	   
 	   public List<String[]> getRondas(){
-		   return null;
+		   return this.ronda;
 	   }
 	   
-	   public List<String[]> getEquipos(){
-		   return null;
+	   public List<String[]> getPronosticos(){
+		   return this.pronosticos;
 	   }
+
 }
-//	    public static void main(String[] args) {
-//	    	LectorDeArchivos objeto = new LectorDeArchivos();
-//
-//	        String pathArchivo1 = "Resultados.csv";
-//	        String pathArchivo2 = "Pronosticos.csv";
-//
-//	        Resultados resultado;
-//	        try {
-//	            resultado = objeto.leerArchivos(pathArchivo1, pathArchivo2);
-//
-//	            List<String[]> data1 = resultado.data1;
-//	            List<String[]> data2 = resultado.data2;
-//	            
-//	            // Imprimir encabezado
-//	          for (String dato : data1.get(0)) {
-//	                System.out.print(dato + " |");
-//	            }
-//	            System.out.println();
-//
-//	            // Imprimir datos
-//	            for (int i = 1; i < data1.size(); i++) {
-//	                for (String dato : data1.get(i)) {
-//	                    System.out.print(dato + "|");
-//	                }
-//	                System.out.println();
-//	            }
-//
-//	            System.out.println();
-//	            
-//	            // Imprimir encabezado
-//	            for (String dato : data2.get(0)) {
-//	                System.out.print(dato + "| ");
-//	            }
-//	            System.out.println();
-//
-//	            // Imprimir datos
-//	            for (int i = 1; i < data2.size(); i++) {
-//	                for (String dato : data2.get(i)) {
-//	                    System.out.print(dato + " |");
-//	                }
-//	                System.out.println();
-//	            }
-//	        } catch (IOException e) {
-//	            e.printStackTrace();
-//	        }
-//	    }
-//}
+
+
+
+
+
+       
+
+
+	   //para imprimir por consola los datos de las rondas y los pronósticos 
+	  // public void imprimirDatos(List<String[]> datos) {
+	   //     for (String[] fila : datos) {
+	   //         for (String elemento : fila) {
+	  //              System.out.print(elemento + " ");
+	  //          }
+	  //          System.out.println(); 
+	   //     }
+	  //  }
+	//}
+
+
+
+

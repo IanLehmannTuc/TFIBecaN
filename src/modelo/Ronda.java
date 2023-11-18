@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Ronda {
     private String nro;
-    private List<Partido> partidos; // Usamos una lista para almacenar múltiples partidos en una ronda
+    private List<Partido> partidos; //  lista para almacenar múltiples partidos en una ronda
 
     public Ronda(String nro, List<Partido> partidos) {
         this.nro = nro;
@@ -19,9 +19,5 @@ public class Ronda {
         return partidos;
     }
 
-    // Puedes agregar otros métodos para realizar operaciones relacionadas con la ronda, como calcular puntajes
     
-    public int puntos() {
-    	return 0;
-    }
 }

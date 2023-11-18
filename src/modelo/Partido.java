@@ -1,18 +1,29 @@
 package modelo;
 
+import controlador.PartidoController;
+
 public class Partido {
+	private String idPartido;
     private Equipo equipo1;
     private Equipo equipo2;
     private int golesEquipo1;
     private int golesEquipo2;
 
-    public Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
-        this.equipo1 = equipo1;
+
+   public Partido(String idPartido,Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
+        this.idPartido = idPartido;
+    	this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-        this.golesEquipo1 = golesEquipo1;
+       this.golesEquipo1 = golesEquipo1;
         this.golesEquipo2 = golesEquipo2;
+        
     }
 
+    
+    
+    public String getIdPartido() {
+        return idPartido;
+    }
     public Equipo getEquipo1() {
         return equipo1;
     }
@@ -29,39 +40,10 @@ public class Partido {
         return golesEquipo2;
     }
 
-    public ResultadoEnum resultado(Equipo equipo) {
-        // Implementa la lógica para determinar el resultado (ganador, perdedor, empate)
-        // Puedes utilizar las puntuaciones de goles para calcularlo
-//        if (golesEquipo1 > golesEquipo2) {
-//            return ResultadoEnum.ganador;
-//        } else if (golesEquipo2 > golesEquipo1) {
-//            return ResultadoEnum.perdedor;
-//        } else {
-//            return ResultadoEnum.empate;
-//        }
-    	
-    	if(this.equipo1.getNombre() == equipo.getNombre()) {
-    		if(golesEquipo1 > golesEquipo2) {
-    			return ResultadoEnum.ganador;
-    		}
-    		else if(golesEquipo2 > golesEquipo1) {
-    			return ResultadoEnum.perdedor;
-    		}
-    		else {
-    			return ResultadoEnum.empate;
-    		}
-    	}
-    	else {
-    		if(golesEquipo2 > golesEquipo1) {
-    			return ResultadoEnum.ganador;
-    		}
-    		else if(golesEquipo1 > golesEquipo2) {
-    			return ResultadoEnum.perdedor;
-    		}
-    		else {
-    			return ResultadoEnum.empate;
-    		}
-    	}
-    	
+    public ResultadoEnum getResultado() {
+        // Utiliza un PartidoController para obtener el resultado del partido
+        PartidoController partidoController = new PartidoController(this);
+        return partidoController.resultado(this.getIdPartido());
     }
-}
+ 
+  }

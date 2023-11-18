@@ -1,32 +1,29 @@
 package controlador;
 
 import modelo.Pronostico;
+import modelo.Partido;
 import modelo.Ronda;
+
+
 
 import java.util.List;
 
 public class ApuestaController {
-
-	public int calcularPuntaje(List<Pronostico> listaPronosticos, Ronda ronda) {
-		
-		int puntajeTotal = 0;
-		
-		for(int i = 0; ronda.getPartidos().size()>i; i++) {
-			
-				if(ronda.getPartidos().get(i).getEquipo1().getNombre().equals(listaPronosticos.get(i).getEquipo().getNombre())){
-					listaPronosticos.get(i).setPartido(ronda.getPartidos().get(i));
-					puntajeTotal += listaPronosticos.get(i).puntos();
-				}
-				
-				else if(ronda.getPartidos().get(i).getEquipo2().getNombre().equals(listaPronosticos.get(i).getEquipo().getNombre())){
-					listaPronosticos.get(i).setPartido(ronda.getPartidos().get(i));
-					puntajeTotal += listaPronosticos.get(i).puntos();
-					
-				}
-				
-		}
-		
-		return puntajeTotal;
-	}
+     public int calcularPuntaje(List<Pronostico> listaPronosticos, Ronda ronda) {
 	
+     int puntajeTotal = 0;
+
+     for (int i = 0; i < listaPronosticos.size(); i++) {
+        // Obtener el Pronostico y el Partido correspondiente
+        Pronostico pronostico = listaPronosticos.get(i);
+        Partido partido = ronda.getPartidos().get(i);
+             // Verificar si el resultado del pronostico coincide con el resultado del partido
+        if (pronostico.getResultadoEnum().equals(partido.getResultado())) {
+            puntajeTotal += pronostico.puntos();
+        }
+    }
+
+    return puntajeTotal;
+}
+
 }

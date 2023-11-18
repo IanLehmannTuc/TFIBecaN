@@ -2,8 +2,9 @@ package modelo;
 
 public enum ResultadoEnum {
 	
-	ganador,
-	perdedor,
-	empate
+	Ganador_Equipo1,
+	Ganador_Equipo2,
+	Empate,
+	No_hay_resultados,
+}	
 	
-}

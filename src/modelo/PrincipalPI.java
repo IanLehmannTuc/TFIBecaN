@@ -20,13 +20,13 @@ public class PrincipalPI {
         }
         return result;
     }
-    public static List<String[]> conectar() {
-        String archivo = "Resultados.csv";
+    public  List<String[]> conectar() {
+        String archivo = "recursos/Resultados.csv";
         List<String[]> valores = PrincipalPI.leerArchivoCSV(archivo);
         return valores;
     }
-    public static List<String[]> conectarr() {
-        String archivo = "Pronosticos.csv";
+    public  List<String[]> conectarr() {
+        String archivo = "recursos/Pronosticos.csv";
         List<String[]> valoresr = PrincipalPI.leerArchivoCSV(archivo);
         return valoresr;
     }
